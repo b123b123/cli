@@ -9,7 +9,7 @@ export default [
 		name: "study",
 		message: "选择学习框架",
 		choices: [
-			{ title: "Boboplus", value: "0" },
+			{ title: "boboplus", value: "0" },
 			{ title: "gitBook", value: "1" },
 		],
 	},
