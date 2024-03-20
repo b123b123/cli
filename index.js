@@ -7,7 +7,7 @@ import helpList from "./help.js";
 import promptOptionsList from "./prompt.js";
 import prompts from "prompts";
 import chalk from "chalk";
-import { gitClone } from "download.js";
+import { gitClone } from "./download.js";
 
 const pkg = JSON.parse(await readFile(new URL("./package.json", import.meta.url)));
 
