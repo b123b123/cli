@@ -10,12 +10,17 @@ export default [
 		message: "密码",
 	},
 	{
+		type: "text",
+		name: "dest",
+		message: "输出目录",
+	},
+	{
 		type: "select", //单选
-		name: "gender",
-		message: "性别",
+		name: "downloadMode",
+		message: "是否下载压缩包",
 		choices: [
-			{ title: "男", value: "0" },
-			{ title: "女", value: "1" },
+			{ title: "是", value: true },
+			{ title: "否", value: false },
 		],
 	},
 	{
@@ -23,9 +28,8 @@ export default [
 		name: "study",
 		message: "选择学习框架",
 		choices: [
-			{ title: "Vue", value: "0" },
-			{ title: "React", value: "1" },
-			{ title: "Angular", value: "2" },
+			{ title: "Boboplus", value: "0" },
+			{ title: "gitBook", value: "1" },
 		],
 	},
 ];
