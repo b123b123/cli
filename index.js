@@ -39,13 +39,17 @@ const remoteList = {
 const getUserInfo = async () => {
 	try {
 		const res = await prompts(promptOptionsList);
-		console.log("res ==> ", res);
-		const { user, password, dest, downloadMode, study } = res;
-		if (!user || !password || !dest || !study) {
-			throw "输入选择有误,请重新启动";
+		const { dest, study } = res;
+		if (!dest) {
+			console.log("\n" + chalk.yellowBright("输出目录不能为空,请重新输入") + "\n");
+			return getUserInfo();
 		}
-		gitClone(`direct:${remoteList[study[0]]}`, dest, {
-			clone: !downloadMode,
+		if (!study) {
+			console.log("\n" + chalk.yellowBright("您没有选择任何框架，程序结束") + "\n");
+			return;
+		}
+		gitClone(`direct:${remoteList[study]}`, dest, {
+			clone: true,
 		});
 	} catch (error) {
 		console.log("\n" + chalk.red(error) + "\n");
