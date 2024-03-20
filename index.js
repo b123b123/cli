@@ -39,12 +39,14 @@ const remoteList = {
 const getUserInfo = async () => {
 	try {
 		const res = await prompts(promptOptionsList);
+		console.log("res ==> ", res);
 		const { user, password, dest, downloadMode, study } = res;
 		if (!user || !password || !dest || !study) {
 			throw "输入选择有误,请重新启动";
 		}
-		gitClone(`direct:${remoteList[study]}`, dest, {
+		gitClone(`direct:${remoteList[study[0]]}`, dest, {
 			clone: !downloadMode,
+			checkout: false,
 		});
 	} catch (error) {
 		console.log("\n" + chalk.red(error) + "\n");
