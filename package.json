@@ -4,8 +4,12 @@
 	"description": "",
 	"type": "module",
 	"bin": "index.js",
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"cli",
+		"boboplus",
+		"create"
+	],
+	"author": "wangbo",
 	"license": "ISC",
 	"dependencies": {
 		"chalk": "^5.3.0",
