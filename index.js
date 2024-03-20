@@ -17,18 +17,6 @@ const optionDefinitions = [
 	{ name: "help", alias: "h", type: Boolean },
 ];
 
-try {
-	const options = commandLineArgs(optionDefinitions);
-	if (options.version) {
-		console.log(`v${pkg.version}`);
-	}
-	if (options.help) {
-		console.log(commandLineUsage(helpList));
-	}
-} catch (error) {
-	console.error("无此命令");
-}
-
 //cli.js
 const remoteList = {
 	0: "https://github.com/b123b123/boboplus.git",
@@ -55,4 +43,18 @@ const getUserInfo = async () => {
 		console.log("\n" + chalk.red(error) + "\n");
 	}
 };
-getUserInfo();
+
+try {
+	const options = commandLineArgs(optionDefinitions);
+	if (options.version) {
+		console.log(`v${pkg.version}`);
+	}
+	if (options.help) {
+		console.log(commandLineUsage(helpList));
+	}
+	if (!Object.keys(options).length) {
+		getUserInfo();
+	}
+} catch (error) {
+	console.error("无此命令");
+}
