@@ -14,8 +14,8 @@ export default [
 		name: "gender",
 		message: "性别",
 		choices: [
-			{ title: "男", value: 0 },
-			{ title: "女", value: 1 },
+			{ title: "男", value: "0" },
+			{ title: "女", value: "1" },
 		],
 	},
 	{
@@ -23,9 +23,9 @@ export default [
 		name: "study",
 		message: "选择学习框架",
 		choices: [
-			{ title: "Vue", value: 0 },
-			{ title: "React", value: 1 },
-			{ title: "Angular", value: 2 },
+			{ title: "Vue", value: "0" },
+			{ title: "React", value: "1" },
+			{ title: "Angular", value: "2" },
 		],
 	},
 ];
