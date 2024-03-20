@@ -45,7 +45,7 @@ const getUserInfo = async () => {
 			return getUserInfo();
 		}
 		if (!study) {
-			console.log("\n" + chalk.yellowBright("您没有选择任何框架，程序结束") + "\n");
+			console.log("\n" + chalk.yellowBright("您没有选择任何模板，已结束运行") + "\n");
 			return;
 		}
 		gitClone(`direct:${remoteList[study]}`, dest, {
