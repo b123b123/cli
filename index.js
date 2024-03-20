@@ -31,8 +31,8 @@ try {
 
 //cli.js
 const remoteList = {
-	1: "https://github.com/b123b123/boboplus.git",
-	2: "https://github.com/b123b123/gitbook-template.git",
+	0: "https://github.com/b123b123/boboplus.git",
+	1: "https://github.com/b123b123/gitbook-template.git",
 };
 
 // 输入选择框区域
@@ -46,7 +46,6 @@ const getUserInfo = async () => {
 		}
 		gitClone(`direct:${remoteList[study[0]]}`, dest, {
 			clone: !downloadMode,
-			checkout: false,
 		});
 	} catch (error) {
 		console.log("\n" + chalk.red(error) + "\n");
