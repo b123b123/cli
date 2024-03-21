@@ -9,7 +9,10 @@ import prompts from "prompts";
 import chalk from "chalk";
 import { gitClone } from "./download.js";
 
-const pkg = JSON.parse(await readFile(new URL("./package.json", import.meta.url)));
+const packFileFn = async () => {
+	return await readFile(new URL("./package.json", import.meta.url));
+};
+const pkg = JSON.parse(packFileFn());
 
 //配置命令参数
 const optionDefinitions = [
